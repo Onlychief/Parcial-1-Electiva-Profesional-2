@@ -54,12 +54,17 @@ class UsuariosModel():
         cursor = DB.cursor()
         cursor.execute('SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = "user"')
         ssql = cursor.fetchall()
-        return ssql
-        for x in len(cursor):
-            ssql[x] = cursor.execute('DESC '+ cursor[x])
-
+        print (ssql)
+        lista=[]
+        for x in ssql:
+            for z in x:
+                print(z)
+                cursor.execute('DESC '+ z)
+                ssql2 = cursor.fetchall() 
+                print(ssql2)
+                lista.append(ssql2)
         cursor.close()
-        return ssql
+        return lista
 
     def describirtablas (self,name):
 
@@ -85,4 +90,4 @@ class UsuariosModel():
         
 
 
-        
+    
