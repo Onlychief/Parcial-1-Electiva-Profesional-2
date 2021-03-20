@@ -44,7 +44,7 @@ INSERT INTO `datosuser` (`id`, `nombre`, `apellido`, `celular`, `correo`, `contr
 -- Volcando estructura para tabla user.insumos
 CREATE TABLE IF NOT EXISTS `insumos` (
   `id` int(11) NOT NULL,
-  `insumospruebados` varchar(50) DEFAULT NULL,
+  `insumospruebatres` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

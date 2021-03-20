@@ -38,16 +38,21 @@ class UserControl():
         user.creardatabase(name)
         return 'hecho'
 
-    def mostrartablas(self):
+    def mostrartablas(self,name):
 
         user = UsuariosModel()
-        mostrartablas = user.mostrartablas()
+        mostrartablas = user.describirtablas(name)
         return (mostrartablas)
+
+    def describirprueba(self):
+        user = UsuariosModel()
+        mostrartablas = user.describirprueba()
+        return (mostrartablas) 
 
     def crearttabla(self,nombretabla, nombrecolumnas=[]):
         
         user = UsuariosModel()
-        mostrartablas = user.mostrartablas()
+        mostrartablas = user.describirtablas()
         return (mostrartablas)
     
     

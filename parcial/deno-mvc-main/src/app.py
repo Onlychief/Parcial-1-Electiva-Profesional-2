@@ -57,12 +57,17 @@ def creardatabase():
     creaciondb = userControl.creardatabase(name)
     return 'Base de datos Creada'
 
-@app.route('/mostrartablas', methods = ['GET'])
-def mostrartablas():
+@app.route('/mostrartablas/<nombretabla>', methods = ['GET'])
+def mostrartablas(nombretabla):
 
-    mostrartablas = userControl.mostrartablas()
+    mostrartablas = userControl.mostrartablas(nombretabla)
     return make_response(jsonify(mostrartablas), 200)
 
+@app.route('/describirtabla', methods = ['GET'])
+def describirtablas():
+
+    mostrartablas = userControl.describirprueba()
+    return make_response(jsonify(mostrartablas), 200)
 
 @app.route('/editartabla/<nombretabla>/<nombrecolumna>', methods = ['PUT'])
 def editartabla(nombretabla,nombrecolumna):
