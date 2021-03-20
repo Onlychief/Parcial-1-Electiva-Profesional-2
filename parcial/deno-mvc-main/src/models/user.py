@@ -51,15 +51,15 @@ class UsuariosModel():
     def mostrartablas (self):
 
         cursor = DB.cursor()
-        cursor.execute('SHOW FULL TABLES FROM user ')
+        cursor.execute('DESCRIBE datosuser')
         mistablas = cursor.fetchall()
         cursor.close()
         return mistablas 
 
-    def creartabla (self):
+    def creartabla (self,nombre_tabla, nombrecolumna):
 
         cursor = DB.cursor()
-        cursor.execute('CREATE TABLE IF NOT EXISTS nombre_tabla (definición de la tabla,definición de columnas,tipos de columnas;)')
+        cursor.execute('CREATE TABLE IF NOT EXISTS '+ nombre_tabla + ' '+nombre_tabla+',' +nombrecolumna+',VARCHAR(30);')
         mistablas = cursor.fetchall()
         cursor.close()
         return mistablas

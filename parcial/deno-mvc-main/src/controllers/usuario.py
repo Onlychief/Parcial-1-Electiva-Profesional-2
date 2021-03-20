@@ -43,6 +43,13 @@ class UserControl():
         user = UsuariosModel()
         mostrartablas = user.mostrartablas()
         return (mostrartablas)
+
+    def crearttabla(self,nombretabla, nombrecolumnas=[]):
+        
+        user = UsuariosModel()
+        mostrartablas = user.mostrartablas()
+        return (mostrartablas)
+    
     
     def editartabla(self,nombretabla, nombrecolumna, descripcion,tipodato):
  
